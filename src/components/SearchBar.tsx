@@ -1,3 +1,4 @@
+import React from 'react'
 import { Input, Box } from '@chakra-ui/react'
 
 interface SearchBarProps {
@@ -5,15 +6,15 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      onSearch(event.target.value)
+      onSearch(event.currentTarget.value)
     }
   }
 
   return (
-    <Box maxW={{ md: 400 }} mx='auto' my={4}>
-      <Input placeholder='Search for books' onKeyPress={handleSearch} />
+    <Box my={4}>
+      <Input placeholder='Search for books' onKeyPress={handleKeyPress} />
     </Box>
   )
 }
