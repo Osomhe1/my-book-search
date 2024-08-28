@@ -13,7 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   }
 
   return (
-    <Box my={4}>
+    <Box my={4} w={{ md: 400 }}>
       <Input placeholder='Search for books' onKeyPress={handleKeyPress} />
     </Box>
   )
